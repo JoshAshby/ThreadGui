@@ -632,11 +632,11 @@ class threadedObject : public ofxThread{
             ofDrawBitmapString(str,xt,yt);
         }
         //--------------------------
-        void text(int x, int y, float data){
+        void dataFloat(int x, int y, float data){
             char str[20];
             y = y+4;
 
-            sprintf(str,"%i",data);
+            sprintf(str,"%f",data);
 
             ofSetColor(0xffffff);
             ofDrawBitmapString(str,x,y);

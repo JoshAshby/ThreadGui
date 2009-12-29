@@ -1604,3 +1604,21 @@
 
 1258483642 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/libs/boost/numeric
 
+1261888070 source:/home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/main.cpp
+	"ofMain.h"
+	"testApp.h"
+	"ofAppGlutWindow.h"
+
+1261952814 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/testApp.h
+	"ofMain.h"
+	"threadedObject.h"
+
+1262069446 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/threadedObject.h
+	"ofMain.h"
+	"ofxThread.h"
+	<cstring>
+
+1262069145 source:/home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/testApp.cpp
+	"testApp.h"
+	"stdio.h"
+

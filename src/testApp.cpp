@@ -39,6 +39,9 @@ float rudata;
 void testApp::setup(){
 	TO.start();
 	ofSetWindowTitle("Threadgui Example");
+	serialdata = 1002;
+    ludata = 45;
+    rudata = 69;
 }
 
 //--------------------------------------------------------------
@@ -50,33 +53,27 @@ void testApp::update(){
 void testApp::draw(){
     TO.roundButtonGreen(0,0,40,"",4);
     //draw a label
-	TO.labelGreen(20,45,"Movement");
+	TO.label(20,45,"Movement");
 	//draw a few buttons
 	TO.roundButton(75,100,20,"<",0);
 	TO.roundButtonGrey(125,100,20,"V",1);
 	TO.roundButton(175,100,20,">",2);
-	TO.roundButtonGreen(125,50,20,"^",3);
+	TO.roundButtonGrey(125,50,20,"^",3);
 
 	TO.label(500,45,"Data");
-	TO.line(520,70,520,350,5);
+	TO.lineGrey(520,70,520,350,5);
 
-	TO.bullet(400,90,"Serial");
-	TO.text(550,90,serialdata);
-	TO.lineGrey(420,105,620,105,2);
+	TO.bulletBlue(400,90,"Serial");
+	TO.dataFloat(550,90,serialdata);
+	TO.lineBlue(420,105,620,105,2);
 
 	TO.mlBulletBlue(400,120,"Left\nUltrasound");
-	TO.text(550,120,ludata);
-	TO.lineGreen(420,135,620,135,2);
+	TO.dataFloat(550,120,ludata);
+	TO.lineBlue(420,135,620,135,2);
 
-	TO.mlBulletGreen(400,150,"Right\nUnltrasound");
-	TO.text(550,150,rudata);
+	TO.mlBulletBlue(400,150,"Right\nUnltrasound");
+	TO.dataFloat(550,150,rudata);
 	TO.lineBlue(420,165,620,165,2);
-
-    TO.labelGrey(200,125,"Square Buttons");
-
-	TO.rectButton(200,200,"hello",5);
-	TO.rectButtonGrey(300,200,"bye",6);
-	TO.rectButtonGreen(400,200,"rawr",7);
 }
 
 //--------------------------------------------------------------
