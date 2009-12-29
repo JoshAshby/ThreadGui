@@ -1,0 +1,5 @@
+ThreadGui is a simple Thread based GUI engine writen in c++ with the Open Frameworks library.
+
+It includes a round button function, a label, formated text (single line), bulleted list item, dual line bulleted list item, and lines.
+
+Plans include making square buttons, and a multi line text container, along with introducing a better indexing system for addressing each item.

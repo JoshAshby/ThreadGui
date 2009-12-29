@@ -29,6 +29,36 @@ class threadedObject : public ofxThread{
 	                //the function will then draw the button, set up the color change for
 	                //click, and place the text in the center of the button.
 
+        /*
+        This GUI has the following:
+
+        label - blue
+        labelGreen
+        labelGrey
+
+        rectButton - blue
+        rectButtonGrey
+        rectButtonGreen
+
+        roundButton - blue
+        roundButtonGrey
+        roundButtonGreen
+
+        line - white
+        lineGreen
+        lineGrey
+        lineBlue
+
+        bullet - grey
+        bulletGreen
+        bulletBlue
+
+        mlBullet - grey
+        mlBulletGreen
+        mlBulletBlue
+
+        */
+
 		//--------variables---------
 		bool roundbuttons[1024];
 		//this is the max # of buttons, if you change this, change the 1024
@@ -94,6 +124,29 @@ class threadedObject : public ofxThread{
 				printf("can't lock!\neither an error\nor the thread has stopped");
 			}
 			int width;
+			ofPushStyle();
+            ofSetRectMode(OF_RECTMODE_CORNER);
+
+			width = strlen(str)*8 + 10;
+
+			ofSetColor(0x012345);
+			ofFill();
+			ofRect(x,y,width,20);
+
+			ofSetColor(0xffffff);
+            ofDrawBitmapString(str,x+5,y+15);
+            ofPopStyle();
+        }
+        //--------------------------
+        void labelGreen(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+			int width;
+			ofPushStyle();
             ofSetRectMode(OF_RECTMODE_CORNER);
 
 			width = strlen(str)*8 + 10;
@@ -104,9 +157,204 @@ class threadedObject : public ofxThread{
 
 			ofSetColor(0xffffff);
             ofDrawBitmapString(str,x+5,y+15);
+            ofPopStyle();
+        }
+        //--------------------------
+        void labelGrey(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+			int width;
+			ofPushStyle();
+            ofSetRectMode(OF_RECTMODE_CORNER);
+
+			width = strlen(str)*8 + 10;
+
+			ofSetColor(0x456456);
+			ofFill();
+			ofRect(x,y,width,20);
+
+			ofSetColor(0xffffff);
+            ofDrawBitmapString(str,x+5,y+15);
+            ofPopStyle();
+        }
+        //--------------------------
+        void rectButton(int x, int y, char srt[15], int color){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+//debug            printf("got:\n x: %i \n y: %i \n h: %i \n text: %s \n if-then: %s \n", x, y, h, srt, color);
+            //draw the circle with radius h at cord. (x,y)
+            int h;
+            h = strlen(srt);
+            h = (h*8)+20;
+
+            //figuring these out to fit in with my click code was a major PITA
+            xcoord[color] = x-(h/2);
+            ycoord[color] = y-(h/2);
+            hvalue[color] = h/2;
+
+            ofPushStyle();
+            ofSetRectMode(OF_RECTMODE_CENTER);
+//debug            printf("%i",ofGetRectMode());
+            if (roundbuttons[color]) {
+                ofSetColor(0x029807);
+            } else {
+                ofSetColor(0x094353);
+            }
+            ofFill();
+            ofRect(x,y,h,h);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofRect(x,y,h,h);
+
+//debug            ofSetColor(0x094353);
+//debug            ofRect((x-((h/2)/x)),(y-((h/2)/y)),h,h);
+
+            //calculate how far over the text needs to be to be in the center of the circle
+            width = strlen(srt);
+            width = (width*8)/2;//8 is the average width of a letter for this
+
+            //draw the text in the center of the circle
+            ofSetColor(0x000000);
+            x = x-width;
+            ofDrawBitmapString(srt,x,y);
+            ofPopStyle();
         }
 		//--------------------------
-		void roundButton(int x, int y, int h, char srt[15], int color){
+        void rectButtonGrey(int x, int y, char srt[15], int color){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+//debug            printf("got:\n x: %i \n y: %i \n h: %i \n text: %s \n if-then: %s \n", x, y, h, srt, color);
+            //draw the circle with radius h at cord. (x,y)
+            int h;
+            h = strlen(srt);
+            h = (h*8)+20;
+
+            //figuring these out to fit in with my click code was a major PITA
+            xcoord[color] = x-(h/2);
+            ycoord[color] = y-(h/2);
+            hvalue[color] = h/2;
+
+            ofPushStyle();
+            ofSetRectMode(OF_RECTMODE_CENTER);
+//debug            printf("%i",ofGetRectMode());
+            if (roundbuttons[color]) {
+                ofSetColor(0x029807);
+            } else {
+                ofSetColor(0x456456);
+            }
+            ofFill();
+            ofRect(x,y,h,h);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofRect(x,y,h,h);
+
+//debug            ofSetColor(0x094353);
+//debug            ofRect((x-((h/2)/x)),(y-((h/2)/y)),h,h);
+
+            //calculate how far over the text needs to be to be in the center of the circle
+            width = strlen(srt);
+            width = (width*8)/2;//8 is the average width of a letter for this
+
+            //draw the text in the center of the circle
+            ofSetColor(0x000000);
+            x = x-width;
+            ofDrawBitmapString(srt,x,y);
+            ofPopStyle();
+        }
+		//--------------------------
+		void rectButtonGreen(int x, int y, char srt[15], int color){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+//debug            printf("got:\n x: %i \n y: %i \n h: %i \n text: %s \n if-then: %s \n", x, y, h, srt, color);
+            //draw the circle with radius h at cord. (x,y)
+            int h;
+            h = strlen(srt);
+            h = (h*8)+20;
+
+            //figuring these out to fit in with my click code was a major PITA
+            xcoord[color] = x-(h/2);
+            ycoord[color] = y-(h/2);
+            hvalue[color] = h/2;
+
+            ofPushStyle();
+            ofSetRectMode(OF_RECTMODE_CENTER);
+//debug            printf("%i",ofGetRectMode());
+            if (roundbuttons[color]) {
+                ofSetColor(0x456456);
+            } else {
+                ofSetColor(0x029807);
+            }
+            ofFill();
+            ofRect(x,y,h,h);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofRect(x,y,h,h);
+
+//debug            ofSetColor(0x094353);
+//debug            ofRect((x-((h/2)/x)),(y-((h/2)/y)),h,h);
+
+            //calculate how far over the text needs to be to be in the center of the circle
+            width = strlen(srt);
+            width = (width*8)/2;//8 is the average width of a letter for this
+
+            //draw the text in the center of the circle
+            ofSetColor(0x000000);
+            x = x-width;
+            ofDrawBitmapString(srt,x,y);
+            ofPopStyle();
+        }
+		//--------------------------
+        void roundButton(int x, int y, int h, char srt[15], int color){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+//debug            printf("got:\n x: %i \n y: %i \n h: %i \n text: %s \n if-then: %s \n", x, y, h, srt, color);
+            //draw the circle with radius h at cord. (x,y)
+            xcoord[color] = x-h;
+            ycoord[color] = y-h;
+            hvalue[color] = h;
+//debug            printf("x:%i\ny:%i\n",xcoord[color],ycoord[color]);
+            if (roundbuttons[color]) {
+                ofSetColor(0x029807);
+            } else {
+                ofSetColor(0x094353);
+            }
+            ofFill();
+            ofCircle(x,y,h);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,h);
+
+            //calculate how far over the text needs to be to be in the center of the circle
+            width = strlen(srt);
+            width = (width*8)/2;//8 is the average width of a letter for this
+
+            //draw the text in the center of the circle
+            ofSetColor(0x000000);
+            x = x-width;
+            ofDrawBitmapString(srt,x,y);
+		}
+		//--------------------------
+		void roundButtonGrey(int x, int y, int h, char srt[15], int color){
             //thread stuff
 		    if( lock() ){
 		        unlock();
@@ -123,6 +371,40 @@ class threadedObject : public ofxThread{
                 ofSetColor(0x029807);
             } else {
                 ofSetColor(0x456456);
+            }
+            ofFill();
+            ofCircle(x,y,h);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,h);
+
+            //calculate how far over the text needs to be to be in the center of the circle
+            width = strlen(srt);
+            width = (width*8)/2;//8 is the average width of a letter for this
+
+            //draw the text in the center of the circle
+            ofSetColor(0x000000);
+            x = x-width;
+            ofDrawBitmapString(srt,x,y);
+		}
+        //-----------------------------
+        void roundButtonGreen(int x, int y, int h, char srt[15], int color){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+//debug            printf("got:\n x: %i \n y: %i \n h: %i \n text: %s \n if-then: %s \n", x, y, h, srt, color);
+            //draw the circle with radius h at cord. (x,y)
+            xcoord[color] = x-h;
+            ycoord[color] = y-h;
+            hvalue[color] = h;
+//debug            printf("x:%i\ny:%i\n",xcoord[color],ycoord[color]);
+            if (roundbuttons[color]) {
+                ofSetColor(0x456456);
+            } else {
+                ofSetColor(0x029807);
             }
             ofFill();
             ofCircle(x,y,h);
@@ -193,6 +475,30 @@ class threadedObject : public ofxThread{
             ofLine(x,y,xc,yc);
             ofPopStyle();
         }
+        //-------------------------
+        void lineGreen(int x,int y, int xc, int yc, int thick){
+            ofSetColor(0x029807);
+            ofPushStyle();
+            ofSetLineWidth(thick);
+            ofLine(x,y,xc,yc);
+            ofPopStyle();
+        }
+        //-------------------------
+        void lineGrey(int x,int y, int xc, int yc, int thick){
+            ofSetColor(0x456456);
+            ofPushStyle();
+            ofSetLineWidth(thick);
+            ofLine(x,y,xc,yc);
+            ofPopStyle();
+        }
+        //--------------------------
+        void lineBlue(int x,int y, int xc, int yc, int thick){
+            ofSetColor(0x094353);
+            ofPushStyle();
+            ofSetLineWidth(thick);
+            ofLine(x,y,xc,yc);
+            ofPopStyle();
+        }
         //--------------------------
         void bullet(int x, int y, char str[20]){
             int xt;
@@ -202,7 +508,117 @@ class threadedObject : public ofxThread{
             yt = y + 4;
 
             ofFill();
+            ofSetColor(0x456456);
+            ofCircle(x,y,5);
+
+            ofPushStyle();
+            ofSetLineWidth(2);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,5);
+            ofPopStyle();
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,xt,yt);
+        }
+        //--------------------------
+        void bulletGreen(int x, int y, char str[20]){
+            int xt;
+            int yt;
+
+            xt = x + 15;
+            yt = y + 4;
+
+            ofFill();
             ofSetColor(0x029807);
+            ofCircle(x,y,5);
+
+            ofPushStyle();
+            ofSetLineWidth(2);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,5);
+            ofPopStyle();
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,xt,yt);
+        }
+        //--------------------------
+        void bulletBlue(int x, int y, char str[20]){
+            int xt;
+            int yt;
+
+            xt = x + 15;
+            yt = y + 4;
+
+            ofFill();
+            ofSetColor(0x094353);
+            ofCircle(x,y,5);
+
+            ofPushStyle();
+            ofSetLineWidth(2);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,5);
+            ofPopStyle();
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,xt,yt);
+        }
+        //--------------------------
+        void mlBullet(int x, int y, char str[20]){
+            int xt;
+            int yt;
+
+            xt = x + 15;
+            yt = y - 2;
+
+            ofFill();
+            ofSetColor(0x456456);
+            ofCircle(x,y,5);
+
+            ofPushStyle();
+            ofSetLineWidth(2);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,5);
+            ofPopStyle();
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,xt,yt);
+        }
+        //--------------------------
+        void mlBulletGreen(int x, int y, char str[20]){
+            int xt;
+            int yt;
+
+            xt = x + 15;
+            yt = y - 2;
+
+            ofFill();
+            ofSetColor(0x029807);
+            ofCircle(x,y,5);
+
+            ofPushStyle();
+            ofSetLineWidth(2);
+            ofNoFill();
+            ofSetColor(0xffffff);
+            ofCircle(x,y,5);
+            ofPopStyle();
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,xt,yt);
+        }
+        //--------------------------
+        void mlBulletBlue(int x, int y, char str[20]){
+            int xt;
+            int yt;
+
+            xt = x + 15;
+            yt = y - 2;
+
+            ofFill();
+            ofSetColor(0x094353);
             ofCircle(x,y,5);
 
             ofPushStyle();
@@ -226,28 +642,6 @@ class threadedObject : public ofxThread{
             ofDrawBitmapString(str,x,y);
         }
         //--------------------------
-        void mlbullet(int x, int y, char str[20]){
-            int xt;
-            int yt;
-
-            xt = x + 15;
-            yt = y - 2;
-
-            ofFill();
-            ofSetColor(0x029807);
-            ofCircle(x,y,5);
-
-            ofPushStyle();
-            ofSetLineWidth(2);
-            ofNoFill();
-            ofSetColor(0xffffff);
-            ofCircle(x,y,5);
-            ofPopStyle();
-
-            ofSetColor(0xffffff);
-            ofDrawBitmapString(str,xt,yt);
-        }
-        //-----------------------
 };
 
 #endif
