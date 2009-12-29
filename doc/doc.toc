@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Setting up}{2}
+\contentsline {section}{\numberline {3}testApp.cpp/.h}{2}
+\contentsline {section}{\numberline {4}threadedObject.h}{2}
+\contentsline {subsection}{\numberline {4.1}buttonAction(int button);}{2}
+\contentsline {subsection}{\numberline {4.2}threadedObject();}{3}
+\contentsline {subsection}{\numberline {4.3}start();}{3}
+\contentsline {subsection}{\numberline {4.4}stop();}{3}
+\contentsline {subsection}{\numberline {4.5}threadedFunction();}{3}
+\contentsline {subsection}{\numberline {4.6}label(int x, int y, char str[20]);}{3}
+\contentsline {subsection}{\numberline {4.7}labelGreen(int x, int y, char str[20]);}{3}
+\contentsline {subsection}{\numberline {4.8}labelGrey(int x, int y, char str[20]);}{3}
+\contentsline {subsection}{\numberline {4.9}rectButton(int x, int y, char srt[15], int color);}{3}
+\contentsline {subsection}{\numberline {4.10}rectButtonGrey(int x, int y, char srt[15], int color);}{4}
+\contentsline {subsection}{\numberline {4.11}rectButtonGreen(int x, int y, char srt[15], int color);}{4}
+\contentsline {subsection}{\numberline {4.12}roundButton(int x, int y, int h, char srt[15], int color);}{4}
+\contentsline {subsection}{\numberline {4.13}roundButtonGrey(int x, int y, int h, char srt[15], int color);}{4}
+\contentsline {subsection}{\numberline {4.14}roundButtonGreen(int x, int y, int h, char srt[15], int color);}{4}
+\contentsline {subsection}{\numberline {4.15}click(int x, int y);}{5}
+\contentsline {subsection}{\numberline {4.16}click(int color);}{5}
+\contentsline {subsection}{\numberline {4.17}line(int x,int y, int xc, int yc, int thick);}{5}
+\contentsline {subsection}{\numberline {4.18}lineGreen(int x,int y, int xc, int yc, int thick);}{5}
+\contentsline {subsection}{\numberline {4.19}lineGrey(int x,int y, int xc, int yc, int thick);}{5}
+\contentsline {subsection}{\numberline {4.20}lineBlue(int x,int y, int xc, int yc, int thick);}{5}
+\contentsline {subsection}{\numberline {4.21}bullet(int x, int y, char str[20]);}{5}
+\contentsline {subsection}{\numberline {4.22}bulletGreen(int x, int y, char str[20]);}{7}
+\contentsline {subsection}{\numberline {4.23}bulletBlue(int x, int y, char str[20]);}{7}
+\contentsline {subsection}{\numberline {4.24}mlBullet(int x, int y, char str[20]);}{7}
+\contentsline {subsection}{\numberline {4.25}mlBulletGreen(int x, int y, char str[20]);}{7}
+\contentsline {subsection}{\numberline {4.26}mlBulletBlue(int x, int y, char str[20]);}{7}
+\contentsline {subsection}{\numberline {4.27}text(int x, int y, float data);}{7}
