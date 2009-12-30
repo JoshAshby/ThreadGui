@@ -34,6 +34,7 @@ bool locked = false;
 float serialdata;
 float ludata;
 float rudata;
+int sRead;
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -51,6 +52,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
+    TO.rectButton(350,80,"Connect",5);
     TO.roundButtonGreen(0,0,40,"",4);
     //draw a label
 	TO.label(20,45,"Movement");

@@ -1609,16 +1609,23 @@
 	"testApp.h"
 	"ofAppGlutWindow.h"
 
-1261952814 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/testApp.h
+1262151007 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/testApp.h
 	"ofMain.h"
 	"threadedObject.h"
+	"serialThread.h"
 
-1262069446 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/threadedObject.h
+1262152093 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/threadedObject.h
+	"ofMain.h"
+	"ofxThread.h"
+	"serialThread.h"
+	<cstring>
+
+1262151535 source:/home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/testApp.cpp
+	"testApp.h"
+	"stdio.h"
+
+1262152135 /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/serialThread.h
 	"ofMain.h"
 	"ofxThread.h"
 	<cstring>
-
-1262069145 source:/home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/testApp.cpp
-	"testApp.h"
-	"stdio.h"
 

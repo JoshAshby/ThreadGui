@@ -3,6 +3,7 @@
 
 #include "ofMain.h"
 #include "ofxThread.h"
+#include "serialThread.h"
 #include <cstring>
 
 /*
@@ -11,10 +12,10 @@ Threadgui
 joshuaashby@joshashby.com
 http://joshashby.com
 */
-
 class threadedObject : public ofxThread{
 
 	public:
+        serialObject    ST;
 
                     //yucky thread stuff:
                     // threaded fucntions that share data need to use lock (mutex)
@@ -79,19 +80,26 @@ class threadedObject : public ofxThread{
                 //example
                 //button 0 with print " < " to the terminal
                 case 0:
-                    printf("<\n");
+                    printf("^\n");
+                    ST.write(102);
                     break;
                 case 1:
                     printf("V\n");
+                    ST.write(102);
                     break;
                 case 2:
                     printf(">\n");
+                    ST.write(102);
                     break;
                 case 3:
                     printf("^\n");
+                    ST.write(102);
                     break;
                 case 4:
                     ofSetWindowShape(800,400);
+                    break;
+                case 5:
+                    ST.setup("/dev/ttyUSB0", 9600);
                     break;
             }
 		}

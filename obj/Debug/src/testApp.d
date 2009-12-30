@@ -205,4 +205,5 @@ obj/Debug/src/testApp.o: \
  /usr/include/gstreamer-0.10/gst/gstxml.h \
  /usr/include/gstreamer-0.10/gst/gstcompat.h \
  /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/threadedObject.h \
- ../../../addons/ofxThread/src/ofxThread.h
+ ../../../addons/ofxThread/src/ofxThread.h \
+ /home/joshua/Downloads/of_preRelease_v0.06_linux_cb_FAT/apps/myApps/threadgui-BOB-GUI/src/serialThread.h

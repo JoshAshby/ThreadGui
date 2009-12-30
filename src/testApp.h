@@ -6,6 +6,7 @@
 
 // this h file has the definition for the threaded gui:
 #include "threadedObject.h"
+#include "serialThread.h"
 
 class testApp : public ofBaseApp{
 
@@ -24,6 +25,9 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 
 		threadedObject	TO;
+		serialObject    ST;
+
+		int sRead;
 };
 
 #endif
