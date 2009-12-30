@@ -2,52 +2,30 @@
 #include "stdio.h"
 
 /*
-label - blue
-labelGreen
-labelGrey
-
-rectButton - blue
-rectButtonGrey
-rectButtonGreen
-
-roundButton - blue
-roundButtonGrey
-roundButtonGreen
-
-line - white
-lineGreen
-lineGrey
-lineBlue
-
-bullet - grey
-bulletGreen
-bulletBlue
-
-mlBullet - grey
-mlBulletGreen
-mlBulletBlue
-
-text - white
+BOB-GUI
+2009 - Joshua Ashby
+joshuaashby@joshashby.com
+http://joshashby.com
 */
 
 bool locked = false;
-float serialdata;
-float ludata;
-float rudata;
-int sRead;
+int serialdata;
+int ludata;
+int rudata;
+unsigned char bytesReturned[3];
 
 //--------------------------------------------------------------
 void testApp::setup(){
 	TO.start();
-	ofSetWindowTitle("Threadgui Example");
-	serialdata = 1002;
-    ludata = 45;
-    rudata = 69;
+	ofSetWindowTitle("BOB-GUI");
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
 	ofBackground(0,0,0);
+	serialdata = bytesReturned[0];
+	ludata = bytesReturned[1];
+	rudata = bytesReturned[2];
 }
 
 //--------------------------------------------------------------

@@ -6,12 +6,13 @@
 #include <cstring>
 
 /*
-Threadgui
+Serial Thread
 2009 - Joshua Ashby
 joshuaashby@joshashby.com
 http://joshashby.com
 */
 extern int sRead;
+extern unsigned char bytesReturned[3];
 class serialObject : public ofxThread{
 
 	public:
@@ -38,15 +39,32 @@ class serialObject : public ofxThread{
 		}
 		//--------------------------
 		void setup(char str[20], int speed){
+		    //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             serial.setup(str[20], speed);
 		}
         //--------------------------
         void read(){
-            unsigned char bytesReturned[3];
-            sRead = serial.readBytes( bytesReturned, 3);
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+            serial.readBytes( bytesReturned, 3);
         }
         //--------------------------
         void write(float data){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             serial.writeByte(data);
         }
         //--------------------------

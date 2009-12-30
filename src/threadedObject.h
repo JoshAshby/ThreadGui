@@ -76,6 +76,12 @@ class threadedObject : public ofxThread{
 		//here by the button numbers
 		//--------------------------
 		void buttonAction(int button){
+		    //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             switch (button) {
                 //example
                 //button 0 with print " < " to the terminal
@@ -477,6 +483,12 @@ class threadedObject : public ofxThread{
 		}
 		//-------------------------
         void line(int x,int y, int xc, int yc, int thick){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             ofSetColor(0xffffff);
             ofPushStyle();
             ofSetLineWidth(thick);
@@ -485,6 +497,12 @@ class threadedObject : public ofxThread{
         }
         //-------------------------
         void lineGreen(int x,int y, int xc, int yc, int thick){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             ofSetColor(0x029807);
             ofPushStyle();
             ofSetLineWidth(thick);
@@ -493,6 +511,12 @@ class threadedObject : public ofxThread{
         }
         //-------------------------
         void lineGrey(int x,int y, int xc, int yc, int thick){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             ofSetColor(0x456456);
             ofPushStyle();
             ofSetLineWidth(thick);
@@ -501,6 +525,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void lineBlue(int x,int y, int xc, int yc, int thick){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             ofSetColor(0x094353);
             ofPushStyle();
             ofSetLineWidth(thick);
@@ -509,6 +539,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void bullet(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             int xt;
             int yt;
 
@@ -531,6 +567,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void bulletGreen(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             int xt;
             int yt;
 
@@ -553,6 +595,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void bulletBlue(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             int xt;
             int yt;
 
@@ -575,6 +623,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void mlBullet(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             int xt;
             int yt;
 
@@ -597,6 +651,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void mlBulletGreen(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             int xt;
             int yt;
 
@@ -619,6 +679,12 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void mlBulletBlue(int x, int y, char str[20]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             int xt;
             int yt;
 
@@ -641,10 +707,32 @@ class threadedObject : public ofxThread{
         }
         //--------------------------
         void dataFloat(int x, int y, float data){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
             char str[20];
             y = y+4;
 
             sprintf(str,"%f",data);
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,x,y);
+        }
+        //--------------------------
+        void dataInt(int x, int y, int data){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+            char str[20];
+            y = y+4;
+
+            sprintf(str,"%i",data);
 
             ofSetColor(0xffffff);
             ofDrawBitmapString(str,x,y);
