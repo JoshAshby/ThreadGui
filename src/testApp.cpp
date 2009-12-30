@@ -17,6 +17,7 @@ unsigned char bytesReturned[3];
 //--------------------------------------------------------------
 void testApp::setup(){
 	TO.start();
+	ST.start();
 	ofSetWindowTitle("BOB-GUI");
 }
 

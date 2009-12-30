@@ -738,6 +738,22 @@ class threadedObject : public ofxThread{
             ofDrawBitmapString(str,x,y);
         }
         //--------------------------
+        void text(int x, int y, char str[1024]){
+            //thread stuff
+		    if( lock() ){
+		        unlock();
+		    }else{
+				printf("can't lock!\neither an error\nor the thread has stopped");
+			}
+            //char str[20];
+            y = y+4;
+
+            //sprintf(str,"%i",data);
+
+            ofSetColor(0xffffff);
+            ofDrawBitmapString(str,x,y);
+        }
+        //--------------------------
 };
 
 #endif
