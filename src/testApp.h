@@ -26,8 +26,6 @@ class testApp : public ofBaseApp{
 
 		threadedObject	TO;
 		serialObject    ST;
-
-		int sRead;
 };
 
 #endif

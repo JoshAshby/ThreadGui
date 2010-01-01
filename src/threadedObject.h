@@ -12,6 +12,7 @@ Threadgui
 joshuaashby@joshashby.com
 http://joshashby.com
 */
+
 class threadedObject : public ofxThread{
 
 	public:
@@ -86,19 +87,19 @@ class threadedObject : public ofxThread{
                 //example
                 //button 0 with print " < " to the terminal
                 case 0:
-                    printf("^\n");
+//debug                    printf("^\n");
                     ST.write(102);
                     break;
                 case 1:
-                    printf("V\n");
+//debug                    printf("V\n");
                     ST.write(102);
                     break;
                 case 2:
-                    printf(">\n");
+//debug                    printf(">\n");
                     ST.write(102);
                     break;
                 case 3:
-                    printf("^\n");
+//debug                    printf("^\n");
                     ST.write(102);
                     break;
                 case 4:

@@ -12,7 +12,6 @@ bool locked = false;
 int serialdata;
 int ludata;
 int rudata;
-unsigned char bytesReturned[3];
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -20,15 +19,16 @@ void testApp::setup(){
 	ST.start();
 	ofSetWindowTitle("BOB-GUI");
 }
-
 //--------------------------------------------------------------
 void testApp::update(){
 	ofBackground(0,0,0);
+	/*
 	serialdata = bytesReturned[0];
 	ludata = bytesReturned[1];
 	rudata = bytesReturned[2];
+	printf("got: %s\n", bytesReturned);
+	*/
 }
-
 //--------------------------------------------------------------
 void testApp::draw(){
     TO.rectButton(350,80,"Connect",5);

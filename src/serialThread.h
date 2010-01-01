@@ -11,11 +11,12 @@ Serial Thread
 joshuaashby@joshashby.com
 http://joshashby.com
 */
-extern int sRead;
-extern unsigned char bytesReturned[3];
+
 class serialObject : public ofxThread{
 
 	public:
+        int sRead;
+        unsigned char bytesReturned[3];
         ofSerial	serial;
 
         serialObject(){
@@ -45,7 +46,7 @@ class serialObject : public ofxThread{
 		    }else{
 				printf("can't lock!\neither an error\nor the thread has stopped");
 			}
-            serial.setup(str[20], speed);
+            serial.setup(str, speed);
 		}
         //--------------------------
         void read(){
@@ -55,7 +56,8 @@ class serialObject : public ofxThread{
 		    }else{
 				printf("can't lock!\neither an error\nor the thread has stopped");
 			}
-            serial.readBytes( bytesReturned, 3);
+            sRead = serial.readBytes( bytesReturned, 3);
+            printf("got: %i\n", sRead);
         }
         //--------------------------
         void write(float data){
