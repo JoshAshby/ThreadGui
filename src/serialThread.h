@@ -4,6 +4,7 @@
 #include "ofMain.h"
 #include "ofxThread.h"
 #include <cstring>
+#include "testApp.h"
 
 /*
 Serial Thread
@@ -57,7 +58,7 @@ class serialObject : public ofxThread{
 				printf("can't lock!\neither an error\nor the thread has stopped");
 			}
             sRead = serial.readBytes( bytesReturned, 3);
-            printf("got: %i\n", sRead);
+//debug            printf("got: %i\n", sRead);
         }
         //--------------------------
         void write(float data){

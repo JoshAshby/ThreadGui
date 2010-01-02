@@ -22,12 +22,11 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 	ofBackground(0,0,0);
-	/*
-	serialdata = bytesReturned[0];
-	ludata = bytesReturned[1];
-	rudata = bytesReturned[2];
-	printf("got: %s\n", bytesReturned);
-	*/
+	ST.read();
+//debug	printf("got: %i\n", ST.sRead);
+    serialdata = ST.bytesReturned[0];
+    ludata = ST.bytesReturned[1];
+    rudata = ST.bytesReturned[2];
 }
 //--------------------------------------------------------------
 void testApp::draw(){
@@ -45,15 +44,15 @@ void testApp::draw(){
 	TO.lineGrey(520,70,520,350,5);
 
 	TO.bulletBlue(400,90,"Serial");
-	TO.dataFloat(550,90,serialdata);
+	TO.dataInt(550,90,serialdata);
 	TO.lineBlue(420,105,620,105,2);
 
 	TO.mlBulletBlue(400,120,"Left\nUltrasound");
-	TO.dataFloat(550,120,ludata);
+	TO.dataInch(550,120,ludata);
 	TO.lineBlue(420,135,620,135,2);
 
 	TO.mlBulletBlue(400,150,"Right\nUnltrasound");
-	TO.dataFloat(550,150,rudata);
+	TO.dataInch(550,150,rudata);
 	TO.lineBlue(420,165,620,165,2);
 }
 
@@ -111,4 +110,3 @@ void testApp::mouseReleased(int x, int y, int button){
 void testApp::windowResized(int w, int h){
 
 }
-
