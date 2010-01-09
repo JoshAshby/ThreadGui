@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="threadgui-BOB-GUI" />
+		<Option title="threadgui" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Option virtualFolders="src/;libs/;libs/openframeworks/;libs/openframeworks/app/;libs/openframeworks/communication/;libs/openframeworks/graphics/;libs/openframeworks/sound/;libs/openframeworks/utils/;libs/openframeworks/video/;libs/openframeworks/events/;addons/ofxThread/src/;addons/;" />
@@ -113,10 +113,13 @@
 		<Unit filename="../../../addons/ofxThread/src/ofxThread.h">
 			<Option virtualFolder="addons/ofxThread/src" />
 		</Unit>
-		<Unit filename="src/main.cpp">
+		<Unit filename="src/buttons.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
-		<Unit filename="src/serialThread.h">
+		<Unit filename="src/buttons.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/main.cpp">
 			<Option virtualFolder="src/" />
 		</Unit>
 		<Unit filename="src/testApp.cpp">

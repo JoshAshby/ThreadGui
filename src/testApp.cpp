@@ -1,59 +1,22 @@
 #include "testApp.h"
 #include "stdio.h"
 
-/*
-BOB-GUI
-2009 - Joshua Ashby
-joshuaashby@joshashby.com
-http://joshashby.com
-*/
-
 bool locked = false;
-int serialdata;
-int ludata;
-int rudata;
 
 //--------------------------------------------------------------
 void testApp::setup(){
 	TO.start();
-	ST.start();
-	ofSetWindowTitle("BOB-GUI");
+	ofSetWindowTitle("Threadgui Circle");
 }
+
 //--------------------------------------------------------------
 void testApp::update(){
 	ofBackground(0,0,0);
-	ST.read();
-//debug	printf("got: %i\n", ST.sRead);
-    serialdata = ST.bytesReturned[0];
-    ludata = ST.bytesReturned[1];
-    rudata = ST.bytesReturned[2];
 }
+
 //--------------------------------------------------------------
 void testApp::draw(){
-    TO.rectButton(350,80,"Connect",5);
-    TO.roundButtonGreen(0,0,40,"",4);
-    //draw a label
-	TO.label(20,45,"Movement");
-	//draw a few buttons
-	TO.roundButton(75,100,20,"<",0);
-	TO.roundButtonGrey(125,100,20,"V",1);
-	TO.roundButton(175,100,20,">",2);
-	TO.roundButtonGrey(125,50,20,"^",3);
-
-	TO.label(500,45,"Data");
-	TO.lineGrey(520,70,520,350,5);
-
-	TO.bulletBlue(400,90,"Serial");
-	TO.dataInt(550,90,serialdata);
-	TO.lineBlue(420,105,620,105,2);
-
-	TO.mlBulletBlue(400,120,"Left\nUltrasound");
-	TO.dataInch(550,120,ludata);
-	TO.lineBlue(420,135,620,135,2);
-
-	TO.mlBulletBlue(400,150,"Right\nUnltrasound");
-	TO.dataInch(550,150,rudata);
-	TO.lineBlue(420,165,620,165,2);
+	TO.draw(75,100,"hello",0x456456,0);
 }
 
 //--------------------------------------------------------------
@@ -61,29 +24,11 @@ void testApp::keyPressed(int key){
     if (key == 'a'){
         TO.click(0);
     }
-    if  (key == 's'){
-        TO.click(1);
-    }
-    if (key == 'd'){
-        TO.click(2);
-    }
-    if  (key == 'w'){
-        TO.click(3);
-    }
 }
 //---------------------------------------------------------------
 void testApp::keyReleased(int key){
     if (key == 'a'){
         TO.click(0);
-    }
-    if  (key == 's'){
-        TO.click(1);
-    }
-    if (key == 'd'){
-        TO.click(2);
-    }
-    if  (key == 'w'){
-        TO.click(3);
     }
 }
 //--------------------------------------------------------------
