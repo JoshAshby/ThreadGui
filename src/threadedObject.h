@@ -72,6 +72,7 @@ class threadedObject : public ofxThread{
                 printf("can't lock!\neither an error\nor the thread has stopped");
             }
             cl = new button;
+            cl->start();
             switch(shape){
                 case 0:
                     cl->roundButton(x,y,str,color);
@@ -82,6 +83,7 @@ class threadedObject : public ofxThread{
                     vec.push_back(*cl);
                     break;
             }
+            cl->stop();
         }
         //--------------------------
         void click(int x, int y){
@@ -90,7 +92,6 @@ class threadedObject : public ofxThread{
             int h;
             int shape;
             //thread stuff
-            int other;
             if( lock() ){
                 unlock();
             }else{
@@ -101,12 +102,15 @@ class threadedObject : public ofxThread{
 
             for ( it = vec.begin(); it != vec.end(); ++it ) {
                 centerx = it->xc;
-                centery = cl->yc;
-                h = cl->hc;
-                shape = cl->shape;
+                centery = it->yc;
+                h = it->hc;
+                shape = it->shape;
                 switch(shape){
                     case 0:
-                        //circle area stuff
+                        if (ofInRange(x,centerx-h,centerx+h) && ofInRange(y,centery-h,centery+h)){
+                            it->click();
+                            printf("click, %i, %i\n", centerx, centery);
+                        }
                         break;
                     case 1:
                         //square area stuff
